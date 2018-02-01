@@ -1,0 +1,57 @@
+\documentclass{hfscript}
+\input{packages.tex}
+%% Wenn ein Quellenverzeichnis genutzt wird, die folgende Zeile unkommentieren
+\input{quellenverzeichnis.tex}
+
+%% Zwingende Variablen, damit Vorlage korrekt funktioniert
+\title{Titel der Arbeit}
+\subtitle{Ein Untertitel}
+\hfsem{Herbstsemester 2017}
+\hffach{TE-Templating}
+\dozent{Streusselhirni}
+\author{Nicolas Haenni}
+\date{Dezember 2017}
+
+\begin{document}
+%% Titelseite / Erste Seite
+%% Page Style anders, damit Kopf-/Fußzeilen passen
+\thispagestyle{scrheadings}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Titel-Stil
+
+%% Short Title
+%% Titel ist nur oben auf der ersten Seite, Inhalt kann
+%% direkt auf der ersten Seite starten.
+
+\input{parts/short_title}
+
+%% Long Title
+%% Es gibt eine Titelseite. Inclusive Abstrakt 
+%% (Zusammenfassung), Dokumenten-Management und
+%% Lizenzangabe.
+
+%\input{parts/long_title}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Inhaltsverzeichnis
+%% Wenn ein Inhaltsverzeichnis benötigt wird, die folgende
+%% Zeile unkommentieren
+%% Für Seitenumbruch nach dem Inhaltsverzeichnis beide
+%% Zeilen unkommentieren.
+%\tableofcontents
+%\clearpage
+
+% Separate Kapitel können per input eingebunden werden.
+\input{sections/01_Beispiel}
+
+% Wenn die Kapitel per include eingebunden werden, starten sie immer auf einer neuen Seite
+\include{sections/02_NochEinBeispiel}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Anhänge
+%% Falls Figures/Tables benutzt werden, können hier die Verzeichnisse aktiviert werden.
+%\listoffigures
+%\listoftables
+
+%% Wenn ein Quellenverzeichnis genutzt wird, die folgende Zeile ebenfalls unkommentieren
+%\printbibliography[title=Quellenverzeichnis]
+\end{document}
